@@ -22,7 +22,6 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-
   # Single deploy job since we're just deploying
   publish:
     environment:
@@ -30,18 +29,8 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
-      - name: setup_python
-        uses: actions/setup-python@v2
-        with:
-          python-version: '3.x'
       - name: Checkout
         uses: actions/checkout@v4
-      - name: Build
-        run: |
-          pip install -r requirements.txt
-          git submodule update --init --recursive
-          cd site
-          make clean publish
       - name: Setup Pages
         uses: actions/configure-pages@v5
       - name: Upload artifact
