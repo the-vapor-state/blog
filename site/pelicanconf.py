@@ -2,7 +2,7 @@ AUTHOR = 'Matt Wiley'
 SITENAME = 'The Vapor State'
 SITEURL = ""
 
-THEME = "../themes/pelican-flex"
+THEME = "themes/pelican-alchemy/alchemy"
 
 PATH = "content"
 
